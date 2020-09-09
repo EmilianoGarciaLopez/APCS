@@ -4,5 +4,10 @@
  * 09/15/2020
  * @author emilianogarcia
 */
+
+import java.util.Scanner;
 public class HolyGrail {
+    public static void main(String[]args){
+
+    }
 }
