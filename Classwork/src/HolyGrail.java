@@ -21,13 +21,17 @@ public class HolyGrail {
         System.out.print("What is your name: ");
         String name = in.nextLine();
         System.out.println("Hello "+name+", nice to meet you!");
-        System.out.print("How old are you: ");
+
+        System.out.print("How old are you "+name+": ");
         int age = in.nextInt();
-        System.out.print("How many pets do you have: ");
+
+        System.out.print("How many pets do you own "+name+": ");
         int numpets = in.nextInt();
+
+        System.out.println();
         System.out.println(name);
-        System.out.println("You are "+ age +" years old.");
-        System.out.println("you have "+ numpets +" pets");
+        System.out.println("You are " +age+ " years old.");
+        System.out.println("you have " +numpets+ " pets");
 
 
 
