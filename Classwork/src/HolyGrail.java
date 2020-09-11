@@ -17,6 +17,12 @@ import java.util.Scanner;
 
 public class HolyGrail {
     public static void main(String[]args){
+
+
+    }
+}
+
+/*
         Scanner in = new Scanner(System.in);
         System.out.print("What is your name: ");
         String name = in.nextLine();
@@ -26,15 +32,11 @@ public class HolyGrail {
         int age = in.nextInt();
 
         System.out.print("How many pets do you own "+name+": ");
-        int numpets = in.nextInt();
+        int numPets = in.nextInt();
 
         System.out.println();
-        System.out.println(name);
+        System.out.println(name+" great talking with you.");
         System.out.println("You are " +age+ " years old.");
-        System.out.println("you have " +numpets+ " pets");
+        System.out.println("you have " +numPets+ " pets");
 
-
-
-    }
-}
-
+ */
