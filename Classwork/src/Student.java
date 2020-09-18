@@ -16,14 +16,33 @@ public class Student {
      * @param gr Grade, and int
      * @param gp GPA, a double
      */
-    public Student(String fn, String ln, int gr, double gp)    {
+    public Student (String fn, String ln, int gr, double gp)    {
         firstname = fn;
         lastname = ln;
         grade = gr;
         gpa = gp;
     }
+    // standard method
+    public Student() {
+        firstname = new String();
+        lastname = new String();
+        grade = 0;
+        gpa = 0.;
+    }
 
-    public String getFirstname()    {    return firstname;    }
-    public String getLastname()        {    return lastname;    }
+    public String getFirstname()    {return firstname;}
+    public String getLastname()     {return lastname;}
+    public int getGrade()           {return grade;}
+    public double getGPA()          {return gpa;}
+
+    //mutator methods
+    public void setFirstName(String newFN) { firstname = newFN; }
+    public void setLastname(String newLN) { lastname = newLN; }
+    public void setGrade(int newGrade) { grade = newGrade; }
+    public void setGPA(String newGPA) { firstname = newGPA; }
+
+    public static void main(String[] args) {
+        Student s1 = new Student("PJ", "Gillispie", 11, 4.2)
+    }
 
 }
