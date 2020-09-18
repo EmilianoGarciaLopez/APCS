@@ -22,13 +22,13 @@ public class Student {
         grade = gr;
         gpa = gp;
     }
-    // standard method
+    /* standard method
     public Student() {
         firstname = new String();
         lastname = new String();
         grade = 0;
         gpa = 0.;
-    }
+    }  */
 
     public String getFirstname()    {return firstname;}
     public String getLastname()     {return lastname;}
@@ -42,7 +42,9 @@ public class Student {
     public void setGPA(String newGPA) { firstname = newGPA; }
 
     public static void main(String[] args) {
-        Student s1 = new Student("PJ", "Gillispie", 11, 4.2)
+        Student s1 = new Student("PJ", "Gillispie", 11, 4.2);
+        Student s2 = new Student("Abby", "Goldman", 12, 4.2);
+        Student s3 = new Student();
     }
 
 }
