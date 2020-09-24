@@ -17,7 +17,6 @@ public class SimpleIOMath {
      * Ask the user for information
      */
     public void promptUser(){
-        System.out.println("This is promptUser");
         Scanner s = new Scanner(System.in);
         System.out.println("* Sit yourself down, take a seat *\n" +
                 "* All you gotta do is repeat after me *");
@@ -44,7 +43,6 @@ public class SimpleIOMath {
      * Print the user's information
       */
     public void printInfo(){
-        System.out.println("This is printInfo");
         System.out.println("I'm gonna teach you how to sing it out\n" +
                 "Come on, come on, come on\n" +
                 "Let me tell you what it's all about\n" +
@@ -56,6 +54,7 @@ public class SimpleIOMath {
         System.out.println("The first prime factor of "+age+" is: " + smallestPrimeFactor(age));
         System.out.println("Your favorite number is: " + favNumber);
         System.out.println("Your favorite number squared is: " + ((int) Math.pow(favNumber, 2)));
+        System.out.println("The cosine of your favourite number is " + (Math.cos(favNumber)));
         System.out.println("* end of program *");
 
     }
