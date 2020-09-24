@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 /**
  * SimpleIOMath is a simple class that takes input/output from
@@ -27,6 +28,15 @@ public class SimpleIOMath {
         System.out.print("What is your favourite number? ");
         favNumber = s.nextInt();
 
+    }
+
+    private int smallestPrimeFactor(int age){
+        int[] primes = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61};
+        for(int factor :primes) {
+            if(age % factor == 0)
+                return factor;
+        }
+        return age;
 
     }
 
@@ -41,7 +51,12 @@ public class SimpleIOMath {
                 "Reading, writing, arithmetic\n" +
                 "Are the branches of the learning tree");
         System.out.println("Your name is: " + name);
-        System.out.println();
+        System.out.println("Your age is: "+ age);
+        System.out.println("At your next birthday, you will turn " + (age+1));
+        System.out.println("The first prime factor of "+age+" is: " + smallestPrimeFactor(age));
+        System.out.println("Your favorite number is: " + favNumber);
+        System.out.println("Your favorite number squared is: " + ((int) Math.pow(favNumber, 2)));
+        System.out.println("* end of program *");
 
     }
 
@@ -52,6 +67,9 @@ public class SimpleIOMath {
     public static void main(String[] args) {
         SimpleIOMath obj  = new SimpleIOMath();
         obj.promptUser();
+        System.out.println();
+        System.out.println();
+        obj.printInfo();
 
     }
 }
