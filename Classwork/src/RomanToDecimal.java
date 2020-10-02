@@ -43,8 +43,21 @@ public class RomanToDecimal {
             sum -= 200;
     }
 
-    public static void main(String[]args)   {
-        System.out.println("Input: CXIX => output: " + romanToDecimal("cxix".toUpperCase()));
+    public static void main(String[] args)   {
+        for (String roman : args)   {
+            int decimal = romanToDecimal(roman.toUpperCase());
+            System.out.print("Input: "+roman+" ==> Output: ");
+            if(decimal == -1)
+                System.out.println("invalid");
+            else    {
+                if (decimalToRoman(decimal).equals(roman.toUpperCase())) {
+                    System.out.println(System.out.println(romanToDecimal(roman.toUpperCase())));
+                }
+                else    {
+                    System.out.println("invalid Roman numeral");
+                }
+            }
+        }
 
     }
 
