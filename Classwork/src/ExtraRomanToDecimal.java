@@ -22,7 +22,7 @@ public class ExtraRomanToDecimal {
     public static int romanToDec(String r) {
         int d = 0;
         for (int i = 0; i< r.length(); i++) {
-            if (doutput.contains(r.charAt(i))){
+            if (doutput.containsKey(r.charAt(i))){
                 int r1 = doutput.get(r.charAt(i));
                 if (i + 1 < r.length()) {
                     int r2 = doutput.get(r.charAt(i + 1));
