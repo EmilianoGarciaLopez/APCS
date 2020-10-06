@@ -10,10 +10,6 @@ public class ExtraRomanToDecimal(String roman2) {
 
     public ExtraRomanToDecimal()    {
         doutput = new Hashtable<>();
-    }
-
-    public void romanAssign()    {
-        doutput = new Hashtable<Character, Integer>();
         doutput.put('i',1);
         doutput.put('x',10);
         doutput.put('c',100);
@@ -21,6 +17,10 @@ public class ExtraRomanToDecimal(String roman2) {
         doutput.put('v',5);
         doutput.put('l',50);
         doutput.put('d',500);
+    }
+
+    public void romanAssign()    {
+
     }
     int romanToDec(String r) {
         int d = 0;
@@ -37,4 +37,4 @@ public class ExtraRomanToDecimal(String roman2) {
         System.out.println();
 
     }
-}}
+}
