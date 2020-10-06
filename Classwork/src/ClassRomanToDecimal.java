@@ -11,7 +11,7 @@ public class ClassRomanToDecimal {
      * @return
      */
 
-    public static int romanToDecimal(String roman)  {
+    public static int classRomanToDecimal(String roman)  {
         int sum = 0;
         for (int i = 0; i< roman.length(); i++) {
             String letter = roman.substring(i, i+1);
@@ -46,7 +46,7 @@ public class ClassRomanToDecimal {
 
     public static void main(String[] args)   {
         for (String roman : args)   {
-            int decimal = romanToDecimal(roman.toUpperCase());
+            int decimal = classRomanToDecimal(roman.toUpperCase());
             System.out.print("Input: "+roman+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");

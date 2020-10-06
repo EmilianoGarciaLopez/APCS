@@ -22,7 +22,7 @@ public class RomanToDecimal {
      * @param roman Must be an uppercase string
      * @return
      */
-    public static int romanToDec(String roman) {
+    public static int romanToDecimal(String roman) {
         int d = 0;
         for (int i = 0; i< roman.length(); i++) { // this traverses the string, a for loop
             if (doutput.containsKey(roman.charAt(i))){ //makes sure that index i of roman is valid input
@@ -44,7 +44,7 @@ public class RomanToDecimal {
     public static void main(String[] args) {
         RomanToDecimal ob = new RomanToDecimal();
         for (String r : args)   {
-            int decimal = romanToDec(r.toUpperCase());
+            int decimal = romanToDecimal(r.toUpperCase());
             System.out.print("Input: "+r+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");

@@ -2,7 +2,7 @@ public class Student {
     //class fields or private data or instance variable of Student
     private String firstname, lastname;
     private int grade;
-    private double gpa;
+    private final double gpa;
 
     /*  Constructors are special methods of a class that help buildd
     an instance of  that object when calling the new keyword. Constructors
