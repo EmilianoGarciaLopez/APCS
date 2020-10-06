@@ -34,13 +34,14 @@ public class RomanToDecimal {
 
         //how to handle invariants
         if(roman.indexOf("IV") != -1 || roman.indexOf("IX") != -1)
-        sum -= 2;
+            sum -= 2;
 
         else if(roman.indexOf("XL") != -1 || roman.indexOf("XC") != -1)
             sum -= 20;
 
         else if(roman.indexOf("CD") != -1 || roman.indexOf("CM") != -1)
             sum -= 200;
+        return sum;
     }
 
     public static void main(String[] args)   {
@@ -49,14 +50,8 @@ public class RomanToDecimal {
             System.out.print("Input: "+roman+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
-            else    {
-                if (decimalToRoman(decimal).equals(roman.toUpperCase())) {
-                    System.out.println(System.out.println(romanToDecimal(roman.toUpperCase())));
-                }
-                else    {
-                    System.out.println("invalid Roman numeral");
-                }
-            }
+            else
+                System.out.println(decimal);
         }
 
     }
