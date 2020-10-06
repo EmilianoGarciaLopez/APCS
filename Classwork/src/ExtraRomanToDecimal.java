@@ -5,7 +5,7 @@ import java.util.Hashtable;
  * This lab is due Tuesday, November 6
  */
 
-public class RomanToDecimal2(String roman2){
+public class ExtraRomanToDecimal(String roman2) {
 
 
     public int romanAssign;{
