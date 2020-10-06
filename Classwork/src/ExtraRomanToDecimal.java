@@ -17,8 +17,11 @@ public class ExtraRomanToDecimal {
         doutput.put('l',50);
         doutput.put('d',500);
     }
-
-
+    /**
+     * converts a string to a valid decimal (base-10 value)
+     * @param r Must be a lowercase string
+     * @return
+     */
     public static int romanToDec(String r) {
         int d = 0;
         for (int i = 0; i< r.length(); i++) {
@@ -38,7 +41,7 @@ public class ExtraRomanToDecimal {
     public static void main(String[] args) {
         ExtraRomanToDecimal ob = new ExtraRomanToDecimal();
         for (String r : args)   {
-            int decimal = romanToDec(r);
+            int decimal = romanToDec(r.toLowerCase());
             System.out.print("Input: "+r+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
