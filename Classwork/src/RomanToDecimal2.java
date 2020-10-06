@@ -5,10 +5,10 @@ import java.util.Hashtable;
  * This lab is due Tuesday, November 6
  */
 
-public class RomanToDeciamal2(String roman2) {
+public class RomanToDecimal2(String roman2){
 
 
-    public int romanAssign {
+    public int romanAssign;{
         Hashtable<Character, Integer> doutput = new Hashtable<>();
         doutput.put('i',1);
         doutput.put('x',10);
@@ -18,10 +18,10 @@ public class RomanToDeciamal2(String roman2) {
         doutput.put('l',50);
         doutput.put('d',500);
 
-        
-        }
 
     }
+
+}
 
     public static void main(String[] args) {
         System.out.println();
