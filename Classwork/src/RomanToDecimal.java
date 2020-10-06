@@ -1,59 +1,55 @@
+import java.util.*;
+
 /** This program ingests a roman numeral
  * and changes it to a base 10 number
  * This lab is due Tuesday, November 6
  */
 
 public class RomanToDecimal {
-    // no private data, only helper methods
+    public static Hashtable<Character, Integer> doutput;
+    public RomanToDecimal()    {
+        doutput = new Hashtable<>();
+        doutput.put('i',1);
+        doutput.put('x',10);
+        doutput.put('c',100);
+        doutput.put('m',1000);
+        doutput.put('v',5);
+        doutput.put('l',50);
+        doutput.put('d',500);
+    }
     /**
      * converts a string to a valid decimal (base-10 value)
-     * @param roman Must be an uppercase string
+     * @param r Must be a lowercase string
      * @return
      */
+    public static int romanToDec(String r) {
+        int d = 0;
+        for (int i = 0; i< r.length(); i++) {
+            if (doutput.containsKey(r.charAt(i))){
+                int r1 = doutput.get(r.charAt(i));
 
-    public static int romanToDecimal(String roman)  {
-        int sum = 0;
-        for (int i = 0; i< roman.length(); i++) {
-            String letter = roman.substring(i, i+1);
-            if(letter.equals("I"))
-                sum += 1;
-            else if (letter.equals("V")) // change to arrays
-                sum += 5;
-            else if (letter.equals("X"))
-                sum += 10;
-            else if (letter.equals("L"))
-                sum += 50;
-            else if (letter.equals("C"))
-                sum += 100;
-            else if (letter.equals("D"))
-                sum += 500;
-            else if (letter.equals("M"))
-                sum += 1000;
-            else return -1;
+                if (i + 1 < r.length()){
+                    if (doutput.containsKey(r.charAt(i+1))) {
+                        int r2 = doutput.get(r.charAt(i + 1));
+                        if (r1 >= r2){ d = d + r1;}
+                        else { d = (d +r2) -r1; i++;} }
+                    else {d = -1; break; }}
+                else { d = d + r1; i++;}}
+
+            else {d = -1; break; }
         }
+        return d;}
 
-        //how to handle invariants
-        if(roman.indexOf("IV") != -1 || roman.indexOf("IX") != -1)
-            sum -= 2;
 
-        else if(roman.indexOf("XL") != -1 || roman.indexOf("XC") != -1)
-            sum -= 20;
-
-        else if(roman.indexOf("CD") != -1 || roman.indexOf("CM") != -1)
-            sum -= 200;
-        return sum;
-    }
-
-    public static void main(String[] args)   {
-        for (String roman : args)   {
-            int decimal = romanToDecimal(roman.toUpperCase());
-            System.out.print("Input: "+roman+" ==> Output: ");
+    public static void main(String[] args) {
+        RomanToDecimal ob = new RomanToDecimal();
+        for (String r : args)   {
+            int decimal = romanToDec(r.toLowerCase());
+            System.out.print("Input: "+r+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
             else
                 System.out.println(decimal);
         }
 
-    }
-
-}
+    }}
