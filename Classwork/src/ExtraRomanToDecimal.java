@@ -5,9 +5,8 @@ import java.util.*;
  * This lab is due Tuesday, November 6
  */
 
-public class ExtraRomanToDecimal(String roman2) {
-    private Hashtable<Character, Integer> doutput;
-
+public class ExtraRomanToDecimal {
+    public static Hashtable<Character, Integer> doutput;
     public ExtraRomanToDecimal()    {
         doutput = new Hashtable<>();
         doutput.put('i',1);
@@ -19,22 +18,32 @@ public class ExtraRomanToDecimal(String roman2) {
         doutput.put('d',500);
     }
 
-    public void romanAssign()    {
 
-    }
-    int romanToDec(String r) {
+    public static int romanToDec(String r) {
         int d = 0;
         for (int i = 0; i< r.length(); i++) {
-            int r1 = doutput.get(r.charAt(i));
+            if (doutput.contains(r.charAt(i))){
+                int r1 = doutput.get(r.charAt(i));
+                if (i + 1 < r.length()) {
+                    int r2 = doutput.get(r.charAt(i + 1));
 
-            if (i + 1 < r.length()) {
-                int r2 = doutput.get(r.charAt(i + 1));
-            }
+                    if (r1 >= r2){ d = d + r1;}
+                    else { d = (d +r2) -r1; i++;} }
+                else { d = d + r1; i++;}}
+            else {d = -1;}
         }
-    }
+        return d;}
+
 
     public static void main(String[] args) {
-        System.out.println();
+        ExtraRomanToDecimal ob = new ExtraRomanToDecimal();
+        for (String r : args)   {
+            int decimal = ob.romanToDec(r);
+            System.out.print("Input: "+r+" ==> Output: ");
+            if(decimal == -1)
+                System.out.println("invalid");
+            else
+                System.out.println(decimal);
+        }
 
-    }
-}
+    }}
