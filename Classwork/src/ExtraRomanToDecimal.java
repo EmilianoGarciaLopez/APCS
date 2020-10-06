@@ -25,13 +25,17 @@ public class ExtraRomanToDecimal {
     public static int romanToDec(String r) {
         int d = 0;
         for (int i = 0; i< r.length(); i++) {
-            if (doutput.containsKey(r.charAt(i)) && doutput.containsKey(r.charAt(i+1))){
+            if (doutput.containsKey(r.charAt(i))){
                 int r1 = doutput.get(r.charAt(i));
-                if (i + 1 < r.length()) {
-                    int r2 = doutput.get(r.charAt(i + 1));
-                    if (r1 >= r2){ d = d + r1;}
-                    else { d = (d +r2) -r1; i++;} }
+
+                if (i + 1 < r.length()){
+                    if (doutput.containsKey(r.charAt(i+1))) {
+                        int r2 = doutput.get(r.charAt(i + 1));
+                        if (r1 >= r2){ d = d + r1;}
+                        else { d = (d +r2) -r1; i++;} }
+                    else {d = -1; break; }}
                 else { d = d + r1; i++;}}
+
             else {d = -1; break; }
         }
         return d;}
