@@ -8,35 +8,35 @@ import java.util.*;
 public class RomanToDecimal {
     public static Hashtable<Character, Integer> doutput;
     public RomanToDecimal()    {
-        doutput = new Hashtable<>();
-        doutput.put('i',1);
-        doutput.put('x',10);
-        doutput.put('c',100);
-        doutput.put('m',1000);
-        doutput.put('v',5);
-        doutput.put('l',50);
-        doutput.put('d',500);
+        doutput = new Hashtable<>(); //dictionary that contains corresponding values
+        doutput.put('I',1);
+        doutput.put('X',10);
+        doutput.put('C',100);
+        doutput.put('M',1000);
+        doutput.put('V',5);
+        doutput.put('L',50);
+        doutput.put('D',500);
     }
     /**
      * converts a string to a valid decimal (base-10 value)
-     * @param r Must be a lowercase string
+     * @param roman Must be an uppercase string
      * @return
      */
-    public static int romanToDec(String r) {
+    public static int romanToDec(String roman) {
         int d = 0;
-        for (int i = 0; i< r.length(); i++) {
-            if (doutput.containsKey(r.charAt(i))){
-                int r1 = doutput.get(r.charAt(i));
+        for (int i = 0; i< roman.length(); i++) { // this traverses the string, a for loop
+            if (doutput.containsKey(roman.charAt(i))){ //makes sure that index i of roman is valid input
+                int r1 = doutput.get(roman.charAt(i)); // gets the value of index i from the hashtable
 
-                if (i + 1 < r.length()){
-                    if (doutput.containsKey(r.charAt(i+1))) {
-                        int r2 = doutput.get(r.charAt(i + 1));
-                        if (r1 >= r2){ d = d + r1;}
-                        else { d = (d +r2) -r1; i++;} }
-                    else {d = -1; break; }}
-                else { d = d + r1; i++;}}
+                if (i + 1 < roman.length()){ // checks i+1, and ensures no out of bounds error
+                    if (doutput.containsKey(roman.charAt(i+1))) { // makes sure that i+1 is valid input
+                        int r2 = doutput.get(roman.charAt(i + 1));//gets value of i+1
+                        if (r1 >= r2){ d = d + r1;} // if i is greater than i + 1  then i + (i+1) is added to the value
+                        else { d = (d +r2) -r1; i++;} } // if it is lesser then i is taken from (i+1)
+                    else {d = -1; break; }} // catches invalid input
+                else { d = d + r1; i++;}} // if it is the end of the string only i matters
 
-            else {d = -1; break; }
+            else {d = -1; break; } //catches invalid input
         }
         return d;}
 
@@ -44,7 +44,7 @@ public class RomanToDecimal {
     public static void main(String[] args) {
         RomanToDecimal ob = new RomanToDecimal();
         for (String r : args)   {
-            int decimal = romanToDec(r.toLowerCase());
+            int decimal = romanToDec(r.toUpperCase());
             System.out.print("Input: "+r+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
