@@ -20,7 +20,7 @@ public class RomanToDecimal {
     /**
      * converts a string to a valid decimal (base-10 value)
      * @param roman Must be an uppercase string
-     * @return
+     * @return this program returns d which is the decimal value
      */
     public static int romanToDecimal(String roman) {
         int d = 0;
@@ -51,5 +51,12 @@ public class RomanToDecimal {
             else
                 System.out.println(decimal);
         }
-
+        System.out.println("My extra is that this program handles non-logical input such as 'ic'.");
     }}
+
+    /* sources:
+    https://www.geeksforgeeks.org/convert-a-roman-number-to-decimal-using-hashmap-in-java/
+    https://www.geeksforgeeks.org/hashtable-in-java/
+    https://www.geeksforgeeks.org/converting-roman-numerals-decimal-lying-1-3999/
+
+     */
