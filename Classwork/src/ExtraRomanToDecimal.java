@@ -38,7 +38,7 @@ public class ExtraRomanToDecimal {
     public static void main(String[] args) {
         ExtraRomanToDecimal ob = new ExtraRomanToDecimal();
         for (String r : args)   {
-            int decimal = ob.romanToDec(r);
+            int decimal = romanToDec(r);
             System.out.print("Input: "+r+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
