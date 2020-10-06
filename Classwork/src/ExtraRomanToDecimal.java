@@ -6,10 +6,14 @@ import java.util.*;
  */
 
 public class ExtraRomanToDecimal(String roman2) {
+    private Hashtable<Character, Integer> doutput;
 
+    public ExtraRomanToDecimal()    {
+        doutput = new Hashtable<>();
+    }
 
     public void romanAssign()    {
-        Hashtable<Character, Integer> doutput = new Hashtable<Character, Integer>();
+        doutput = new Hashtable<Character, Integer>();
         doutput.put('i',1);
         doutput.put('x',10);
         doutput.put('c',100);
@@ -24,8 +28,9 @@ public class ExtraRomanToDecimal(String roman2) {
             int r1 = doutput.get(r.charAt(i));
 
             if (i + 1 < r.length()) {
-                int r2 = doutput.get(r.charAt(i+1));
+                int r2 = doutput.get(r.charAt(i + 1));
             }
+        }
     }
 
     public static void main(String[] args) {
