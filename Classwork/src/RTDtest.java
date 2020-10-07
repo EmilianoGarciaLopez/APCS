@@ -32,7 +32,6 @@ public class RTDtest {
         assertEquals(RomanToDecimal.romanToDecimal("IM"), 999);
         assertEquals(RomanToDecimal.romanToDecimal("XM"), 990);
 
-
         //2 NotEquals
         assertNotEquals(RomanToDecimal.romanToDecimal("YOUR_MOM"), 8);
         assertNotEquals(RomanToDecimal.romanToDecimal("xi"), 11);
