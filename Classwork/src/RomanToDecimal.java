@@ -5,7 +5,9 @@ import java.util.Hashtable;
  * This lab is due Tuesday, November 6
  */
 
-public class RomanToDecimal {
+// I could not find a place to utilize the indexOf(), or substring() methods
+
+public class RomanToDecimal { // this is a public class that handles everything in this project
     /**
      * converts a string to a valid decimal (base-10 value)
      * @param roman Must be an uppercase string
@@ -14,14 +16,14 @@ public class RomanToDecimal {
     public static int romanToDecimal(String roman) {
         Hashtable<Character, Integer> doutput;
         doutput = new Hashtable<>(); //dictionary that contains corresponding values
-        doutput.put('I',1);
+        doutput.put('I',1); // for example I = 1
         doutput.put('X',10);
         doutput.put('C',100);
         doutput.put('M',1000);
         doutput.put('V',5);
         doutput.put('L',50);
         doutput.put('D',500);
-        int d = 0;
+        int d = 0; // intitialize the decimal output with a value of 0
         for (int i = 0; i < roman.length(); i++) { // this traverses the string, a for loop
             if (doutput.containsKey(roman.charAt(i))) { //makes sure that index i of roman is valid input
                 int r1 = doutput.get(roman.charAt(i)); // gets the value of index i from the hashtable
@@ -33,35 +35,34 @@ public class RomanToDecimal {
                             d = d + r1;
                         } // if i is greater than i + 1  then i + (i+1) is added to the value
                         else {
-                            d = (d + r2) - r1;
+                            d = (d + r2) - r1; // if it is lesser then i is taken from (i+1)
                             i++;
                         }
-                    } // if it is lesser then i is taken from (i+1)
+                    }
                     else {
-                        d = -1;
+                        d = -1;// catches invalid input and breaks for loop
                         break;
                     }
-                } // catches invalid input
+                }
                 else {
-                    d = d + r1;
+                    d = d + r1; // if it is the end of the string only i matters
                     i++;
                 }
-            } // if it is the end of the string only i matters
+            }
 
             else {
                 d = -1;
                 break;
             } //catches invalid input
         }
-        return d;}
+        return d;} // returns a decimal value as output
 
 
     public static void main(String[] args) {
-        RomanToDecimal ob = new RomanToDecimal();
-        for (String r : args)   {
-            int decimal = romanToDecimal(r.toUpperCase());
-            System.out.print("Input: "+r+" ==> Output: ");
-            if(decimal == -1)
+        for (String roman : args)   { //uses args as the roman string value
+            int decimal = romanToDecimal(roman.toUpperCase()); //sets decimal equal to the output of romanToDecimal
+            System.out.print("Input: "+roman+" ==> Output: ");
+            if(decimal == -1) //checks if output is invalid
                 System.out.println("invalid");
             else
                 System.out.println(decimal);
