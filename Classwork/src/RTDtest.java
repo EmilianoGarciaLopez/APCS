@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class RTDtest {
-    RomanToDecimal ob = new RomanToDecimal();
+
 
     @Test
     public void RTDest() {

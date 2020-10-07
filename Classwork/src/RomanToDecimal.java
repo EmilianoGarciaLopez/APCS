@@ -6,8 +6,13 @@ import java.util.Hashtable;
  */
 
 public class RomanToDecimal {
-    public static Hashtable<Character, Integer> doutput;
-    public RomanToDecimal()    {
+    /**
+     * converts a string to a valid decimal (base-10 value)
+     * @param roman Must be an uppercase string
+     * @return this program returns d which is the decimal value
+     */
+    public static int romanToDecimal(String roman) {
+        Hashtable<Character, Integer> doutput;
         doutput = new Hashtable<>(); //dictionary that contains corresponding values
         doutput.put('I',1);
         doutput.put('X',10);
@@ -16,13 +21,6 @@ public class RomanToDecimal {
         doutput.put('V',5);
         doutput.put('L',50);
         doutput.put('D',500);
-    }
-    /**
-     * converts a string to a valid decimal (base-10 value)
-     * @param roman Must be an uppercase string
-     * @return this program returns d which is the decimal value
-     */
-    public static int romanToDecimal(String roman) {
         int d = 0;
         for (int i = 0; i < roman.length(); i++) { // this traverses the string, a for loop
             if (doutput.containsKey(roman.charAt(i))) { //makes sure that index i of roman is valid input
