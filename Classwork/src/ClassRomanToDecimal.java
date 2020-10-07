@@ -45,9 +45,9 @@ public class ClassRomanToDecimal {
     }
 
     public static void main(String[] args)   {
-        for (String roman : args)   {
-            int decimal = classRomanToDecimal(roman.toUpperCase());
-            System.out.print("Input: "+roman+" ==> Output: ");
+        for (String classroman : args)   {
+            int decimal = classRomanToDecimal(classroman.toUpperCase());
+            System.out.print("Input: "+classroman+" ==> Output: ");
             if(decimal == -1)
                 System.out.println("invalid");
             else
