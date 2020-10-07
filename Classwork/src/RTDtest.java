@@ -1,8 +1,7 @@
-import org.junit.Test;
-
 //import statements
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals; //tests if expected and actual values are the same
+import static org.junit.Assert.assertNotEquals; // tests if expected and actual are not the same
 
 public class RTDtest {
 
