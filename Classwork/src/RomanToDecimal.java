@@ -24,20 +24,37 @@ public class RomanToDecimal {
      */
     public static int romanToDecimal(String roman) {
         int d = 0;
-        for (int i = 0; i< roman.length(); i++) { // this traverses the string, a for loop
-            if (doutput.containsKey(roman.charAt(i))){ //makes sure that index i of roman is valid input
+        // this traverses the string, a for loop
+        for (int i = 0; i< roman.length(); i++)
+            if (doutput.containsKey(roman.charAt(i))) { //makes sure that index i of roman is valid input
                 int r1 = doutput.get(roman.charAt(i)); // gets the value of index i from the hashtable
 
-                if (i + 1 < roman.length()){ // checks i+1, and ensures no out of bounds error
-                    if (doutput.containsKey(roman.charAt(i+1))) { // makes sure that i+1 is valid input
+                if (i + 1 < roman.length()) { // checks i+1, and ensures no out of bounds error
+                    if (doutput.containsKey(roman.charAt(i + 1))) { // makes sure that i+1 is valid input
                         int r2 = doutput.get(roman.charAt(i + 1));//gets value of i+1
-                        if (r1 >= r2){ d = d + r1;} // if i is greater than i + 1  then i + (i+1) is added to the value
-                        else { d = (d +r2) -r1; i++;} } // if it is lesser then i is taken from (i+1)
-                    else {d = -1; break; }} // catches invalid input
-                else { d = d + r1; i++;}} // if it is the end of the string only i matters
+                        if (r1 >= r2) {
+                            d = d + r1;
+                        } // if i is greater than i + 1  then i + (i+1) is added to the value
+                        else {
+                            d = (d + r2) - r1;
+                            i++;
+                        }
+                    } // if it is lesser then i is taken from (i+1)
+                    else {
+                        d = -1;
+                        break;
+                    }
+                } // catches invalid input
+                else {
+                    d = d + r1;
+                    i++;
+                }
+            } // if it is the end of the string only i matters
 
-            else {d = -1; break; } //catches invalid input
-        }
+            else {
+                d = -1;
+                break;
+            } //catches invalid input
         return d;}
 
 
