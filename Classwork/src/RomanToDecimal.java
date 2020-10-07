@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Hashtable;
 
 /** This program ingests a roman numeral
  * and changes it to a base 10 number
@@ -24,8 +24,7 @@ public class RomanToDecimal {
      */
     public static int romanToDecimal(String roman) {
         int d = 0;
-        // this traverses the string, a for loop
-        for (int i = 0; i< roman.length(); i++)
+        for (int i = 0; i < roman.length(); i++) { // this traverses the string, a for loop
             if (doutput.containsKey(roman.charAt(i))) { //makes sure that index i of roman is valid input
                 int r1 = doutput.get(roman.charAt(i)); // gets the value of index i from the hashtable
 
@@ -55,6 +54,7 @@ public class RomanToDecimal {
                 d = -1;
                 break;
             } //catches invalid input
+        }
         return d;}
 
 
