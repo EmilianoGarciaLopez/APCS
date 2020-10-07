@@ -7,14 +7,14 @@ public class ClassRomanToDecimal {
     // no private data, only helper methods
     /**
      * converts a string to a valid decimal (base-10 value)
-     * @param roman Must be an uppercase string
+     * @param classroman Must be an uppercase string
      * @return
      */
 
-    public static int classRomanToDecimal(String roman)  {
+    public static int classRomanToDecimal(String classroman)  {
         int sum = 0;
-        for (int i = 0; i< roman.length(); i++) {
-            String letter = roman.substring(i, i+1);
+        for (int i = 0; i< classroman.length(); i++) {
+            String letter = classroman.substring(i, i+1);
             if(letter.equals("I"))
                 sum += 1;
             else if (letter.equals("V")) // change to arrays
@@ -33,13 +33,13 @@ public class ClassRomanToDecimal {
         }
 
         //how to handle invariants
-        if(roman.indexOf("IV") != -1 || roman.indexOf("IX") != -1)
+        if(classroman.indexOf("IV") != -1 || classroman.indexOf("IX") != -1)
             sum -= 2;
 
-        else if(roman.indexOf("XL") != -1 || roman.indexOf("XC") != -1)
+        else if(classroman.indexOf("XL") != -1 || classroman.indexOf("XC") != -1)
             sum -= 20;
 
-        else if(roman.indexOf("CD") != -1 || roman.indexOf("CM") != -1)
+        else if(classroman.indexOf("CD") != -1 || classroman.indexOf("CM") != -1)
             sum -= 200;
         return sum;
     }
