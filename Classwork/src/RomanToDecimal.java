@@ -58,7 +58,7 @@ public class RomanToDecimal { // this is a public class that handles everything 
         return d;} // returns a decimal value as output
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //main method that interacts with user and takes args
         for (String roman : args)   { //uses args as the roman string value
             int decimal = romanToDecimal(roman.toUpperCase()); //sets decimal equal to the output of romanToDecimal
             System.out.print("Input: "+roman+" ==> Output: ");
