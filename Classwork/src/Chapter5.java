@@ -20,7 +20,7 @@ public class Chapter5 {
         //STRINGS are NOT primatives; you can't compare using ==
         //Must compare using .equals or .compareTo
         String coolkid = "Sassan";
-        String notcoolkid = new String("Sassan"); //Java tries to save memory unless specified by programmer
+        String notcoolkid = "Sassan"; //Java tries to save memory unless specified by programmer
         if (coolkid.equals(notcoolkid)) //compares lexicographically
             System.out.println("true");
         else
@@ -28,7 +28,7 @@ public class Chapter5 {
 
         System.out.println(coolkid.charAt(0) == coolkid.charAt(2)); //S != s
         String doofus = null; //you can print null, but not an empty value
-        System.out.println();
+
     }
 }
 
