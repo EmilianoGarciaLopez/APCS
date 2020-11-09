@@ -23,7 +23,7 @@ public class RomanToDecimal { // this is a public class that handles everything 
         doutput.put('V',5);
         doutput.put('L',50);
         doutput.put('D',500);
-        int d = 0; // intitialize the decimal output with a value of 0
+        int d = 0; // initialize the decimal output with a value of 0
         for (int i = 0; i < roman.length(); i++) { // this traverses the string, a for loop
             if (doutput.containsKey(roman.charAt(i))) { //makes sure that index i of roman is valid input
                 int r1 = doutput.get(roman.charAt(i)); // gets the value of index i from the hashtable
