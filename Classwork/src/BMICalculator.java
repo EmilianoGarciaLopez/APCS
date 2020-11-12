@@ -2,9 +2,10 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- * Javadoc this
+ * This program calculates a user's BMI from their height and weight
  *
  * @author emilianogarcia
+ * @version 1
  */
 
 public class BMICalculator {
@@ -16,9 +17,9 @@ public class BMICalculator {
      * @param pounds weight;
      * @return the user's BMI , expressed in weight/height^2
      */
-    public static double copmuteBMI(int inches, int pounds) {
-        double meters = inches / 39.3701;
-        double kgs = 0.453592 * pounds;
+    public static double computeBMI(int inches, int pounds) {
+        double meters = inches * 0.0254;
+        double kgs = 0.454 * pounds;
         if (meters <= 0 || kgs <= 0)
             return 0.0;
         else {
@@ -28,7 +29,9 @@ public class BMICalculator {
 
     /**
      * Main method for class BMI calculator
-     *
+     * Uses a Scanner to prompt the user for info, process the
+     * feet/inches conversion, calls the computeBMI method and prints the
+     * correct information.
      * @param args command line arguments, if needed
      */
     public static void main(String[] args) {
@@ -47,7 +50,7 @@ public class BMICalculator {
                             Integer.parseInt(textHeight.substring((qtPos + 1), dblQtPos));
                     System.out.print("Enter your weight in pounds: ");
                     intWeight = in.nextInt();
-                    System.out.println("TODO YOUR BMI..." + df.format(copmuteBMI(intHeight, intWeight)) + " Units");
+                    System.out.println("Your BMI, expressed as weight(kg)/height(m)^2: " + df.format(computeBMI(intHeight, intWeight)) + " kg/m^2");
 
                 } else if (textHeight.toUpperCase().equals("Q")) {
                     break;
