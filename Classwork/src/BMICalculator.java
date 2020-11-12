@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 /**
  * This program calculates a user's BMI from their height and weight
- *
  * @author emilianogarcia
  * @version 1
  */
@@ -32,7 +31,6 @@ public class BMICalculator {
      * Uses a Scanner to prompt the user for info, process the
      * feet/inches conversion, calls the computeBMI method and prints the
      * correct information.
-     *
      * @param args command line arguments, if needed
      */
     public static void main(String[] args) {
