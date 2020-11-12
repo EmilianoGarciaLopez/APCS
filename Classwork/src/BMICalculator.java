@@ -57,20 +57,16 @@ public class BMICalculator {
                 } else if (textHeight.toUpperCase().equals("Q")) {
                     break;
                 } else {
-                    System.out.println("TODO invalid");
+                    System.out.println("invalid input, please try again");
                 }
 
             } catch (Exception e) {
-                if (textHeight.toUpperCase().equals("Q"))
-                    break;
 
-                else {
-                    System.out.println("TODO invalid, more details");
-                    System.out.println(e);
-                    if (e instanceof java.util.InputMismatchException)
-                        in.nextLine();
-                }
 
+                System.out.print("invalid input please try again. more details: ");
+                System.out.println(e);
+                if (e instanceof java.util.InputMismatchException)
+                    in.nextLine();
 
             }
 
