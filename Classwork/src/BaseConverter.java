@@ -1,41 +1,83 @@
+import java.io.File;
+import java.util.Scanner;
+
 /**
  * This program is a base converter that reads a data file and outputs a converted file
  *
  * @author emiliano
- * @version 1
+ * @version 11/19/2020
  */
-
-//https://37217a484a23ab97c7ac-fa9b9614c621c6ddb72aebe76bae7b72.ssl.cf1.rackcdn.com/6xrrzezhxa/Proj0201_BaseConverter.pdf
 public class BaseConverter {
 
-    // Constructor for class.
-    public BaseConverter(){
+    /**
+     * Constructor for class.
+     */
+    public BaseConverter() {
 
     }
 
-
-    // Convert a String num in fromBase to base-10 int.
-    public int strToInt(String num, String fromBase){
-        return 0;
-
-    }
-
-
-    // Convert a base-10 int to a String number of base toBase.
-    public String intToStr(int num, int toBase){
-        return "";
-
-    }
-
-
-    // Opens the file stream, inputs data one line at a time, converts, prints
-    // the result to the console window and writes data to the output stream.
-    public void inputConvertPrintWrite(){
-
-    }
-    // Main method for class BaseConverter. Yours should look just like this!
+    /**
+     * Main method for class BaseConverter
+     *
+     * @param args, command line arguments, if needed
+     */
     public static void main(String[] args) {
         BaseConverter app = new BaseConverter();
         app.inputConvertPrintWrite();
     }
+
+    /**
+     * Convert a String num in fromBase to base-10 int.
+     *
+     * @param num,      a String representing the original value
+     * @param fromBase, a String TODO
+     */
+    public int strToInt(String num, String fromBase) {
+        return 0;
+
+    }
+
+    /**
+     * Convert a base-10 int to a String number of base toBase.
+     *
+     * @param num
+     * @param toBase
+     * @return
+     */
+    public String intToStr(int num, int toBase) {
+        return "";
+
+    }
+
+    /**
+     * Opens the file stream, inputs data one line at a time, converts, prints
+     * the result to the console window and writes data to the output stream.
+     */
+    public void inputConvertPrintWrite() {
+        Scanner in = null;
+        try {
+            in = new Scanner(new File("Classwork/datafiles/values30.dat"));
+            String[] line;
+            while (in.hasNext()) {
+                line = in.nextLine().split("\t");
+                if(Integer.parseInt(line[1]) < 2 || Integer.parseInt(line[1]) > 16){
+                    System.out.println("Invalid input base " + "TODO");
+                }
+                else if (Integer.parseInt(line[2]) < 2 || Integer.parseInt(line[2]) > 16){
+                    System.out.println("invalid output base "+ "TODO");
+                }
+                else {
+                    System.out.println(line[0] + " base " + line[1] + " = " + "???" + " base " + line[2]);
+                    // ["24A4B46", "13", "6"]
+                    //System.out.println(in.nextLine());
+                }
+            }
+            in.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }
+
+
 }
