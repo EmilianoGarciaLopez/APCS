@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class BaseConverter {
 
+    final String SYMBOLS = "0123456789ABCDEF";
+
     /**
      * Constructor for class.
      */
@@ -23,7 +25,8 @@ public class BaseConverter {
      */
     public static void main(String[] args) {
         BaseConverter app = new BaseConverter();
-        app.inputConvertPrintWrite();
+
+        System.out.println(app.strToInt("9", "10"));
     }
 
     /**
@@ -33,8 +36,11 @@ public class BaseConverter {
      * @param fromBase, a String TODO
      */
     public int strToInt(String num, String fromBase) {
-        return 0;
-
+        int result = 0;
+        for (char ch : num.toCharArray()) {
+            result += SYMBOLS.indexOf(ch) * Math.pow((Integer.parseInt(fromBase)), (num.length() - (num.indexOf(ch) + 1)));
+        }
+        return result;
     }
 
     /**
