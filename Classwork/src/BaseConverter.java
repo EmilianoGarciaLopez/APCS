@@ -72,6 +72,7 @@ public class BaseConverter {
                             intToStr(strToInt(line[0], line[1]), Integer.parseInt(line[2])) + "\t" + line[2]);
                     // ["24A4B46", "13", "6"]
                     //System.out.println(in.nextLine());
+
                 }
 
             }
@@ -85,7 +86,6 @@ public class BaseConverter {
 
     /**
      * Convert a String num in fromBase to base-10 int.
-     *breu
      * @param num,      a String representing the original value
      * @param fromBase, a String TODO
      * @return result, which is num converted to base 10
