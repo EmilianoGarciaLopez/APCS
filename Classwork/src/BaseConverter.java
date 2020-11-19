@@ -44,7 +44,8 @@ public class BaseConverter {
             outputNum = SYMBOLS.charAt(num % toBase) + outputNum;
             num /= toBase;
         }
-        return outputNum;
+
+        return outputNum.equals("") ? "0" : outputNum;
     }
 
     /**
@@ -61,12 +62,14 @@ public class BaseConverter {
             while (in.hasNext()) {
                 line = in.nextLine().split("\t");
                 if (Integer.parseInt(line[1]) < 2 || Integer.parseInt(line[1]) > 16) {
-                    System.out.println("Invalid input base " + "TODO");
+                    System.out.print("");
                 } else if (Integer.parseInt(line[2]) < 2 || Integer.parseInt(line[2]) > 16) {
-                    System.out.println("invalid output base " + "TODO");
+                    System.out.print("");
                 } else {
-                    System.out.println(line[0] + " base " + line[1] + " = " + "???" + " base " + line[2]);
-                    pw.println(line[0] + "\t" + line[1] + "\t" + line[2]);
+                    System.out.println(line[0] + "\t" + line[1] + "\t" +
+                            intToStr(strToInt(line[0], line[1]), Integer.parseInt(line[2])) + "\t" + line[2]);
+                    pw.println(line[0] + "\t" + line[1] + "\t" +
+                            intToStr(strToInt(line[0], line[1]), Integer.parseInt(line[2])) + "\t" + line[2]);
                     // ["24A4B46", "13", "6"]
                     //System.out.println(in.nextLine());
                 }
