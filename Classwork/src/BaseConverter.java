@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -32,14 +34,17 @@ public class BaseConverter {
 
     /**
      * Convert a base-10 int to a String number of base toBase.
-     *
      * @param num
      * @param toBase
      * @return
      */
     public String intToStr(int num, int toBase) {
-        return "";
-
+        String outputNum = "";
+        while (num > 0) {
+            outputNum = SYMBOLS.charAt(num % toBase) + outputNum;
+            num /= toBase;
+        }
+        return outputNum;
     }
 
     /**
@@ -48,8 +53,10 @@ public class BaseConverter {
      */
     public void inputConvertPrintWrite() {
         Scanner in = null;
+        PrintWriter pw = null;
         try {
-            in = new Scanner(new File("Classwork/datafiles/values30.dat"));
+            in = new Scanner(new File("Classwork/datafiles/values10.dat"));
+            pw = new PrintWriter(new FileWriter("Classwork/datafiles/converted.dat"));
             String[] line;
             while (in.hasNext()) {
                 line = in.nextLine().split("\t");
@@ -59,11 +66,14 @@ public class BaseConverter {
                     System.out.println("invalid output base " + "TODO");
                 } else {
                     System.out.println(line[0] + " base " + line[1] + " = " + "???" + " base " + line[2]);
+                    pw.println(line[0] + "\t" + line[1] + "\t" + line[2]);
                     // ["24A4B46", "13", "6"]
                     //System.out.println(in.nextLine());
                 }
+
             }
             in.close();
+            pw.close();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -82,8 +92,8 @@ public class BaseConverter {
         int result = 0;
         int exponent = num.length() - 1;
 
-        for (char ch : num.toCharArray()) { //starts with largest value and works down
-            int number = SYMBOLS.indexOf(ch);
+        for (char chr : num.toCharArray()) { //starts with largest value and works down
+            int number = SYMBOLS.indexOf(chr);
             result += (int) (number * Math.pow(base, exponent));
             exponent--;
         }
