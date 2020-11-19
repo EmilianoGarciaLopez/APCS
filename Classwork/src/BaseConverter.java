@@ -82,7 +82,7 @@ public class BaseConverter {
 
     /**
      * Convert a String num in fromBase to base-10 int.
-     *
+     *breu
      * @param num,      a String representing the original value
      * @param fromBase, a String TODO
      * @return result, which is num converted to base 10
