@@ -18,6 +18,7 @@ public class BaseConverter {
 
     }
 
+
     /**
      * Main method for class BaseConverter
      *
@@ -25,23 +26,9 @@ public class BaseConverter {
      */
     public static void main(String[] args) {
         BaseConverter app = new BaseConverter();
-
-        System.out.println(app.strToInt("9", "10"));
+        app.inputConvertPrintWrite();
     }
 
-    /**
-     * Convert a String num in fromBase to base-10 int.
-     *
-     * @param num,      a String representing the original value
-     * @param fromBase, a String TODO
-     */
-    public int strToInt(String num, String fromBase) {
-        int result = 0;
-        for (char ch : num.toCharArray()) {
-            result += SYMBOLS.indexOf(ch) * Math.pow((Integer.parseInt(fromBase)), (num.length() - (num.indexOf(ch) + 1)));
-        }
-        return result;
-    }
 
     /**
      * Convert a base-10 int to a String number of base toBase.
@@ -80,6 +67,28 @@ public class BaseConverter {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+    }
+
+    /**
+     * Convert a String num in fromBase to base-10 int.
+     *
+     * @param num,      a String representing the original value
+     * @param fromBase, a String TODO
+     * @return result, which is num converted to base 10
+     */
+    public int strToInt(String num, String fromBase) {
+        int base = Integer.parseInt(fromBase);
+        int result = 0;
+        int exponent = num.length() - 1;
+
+        for (char ch : num.toCharArray()) { //starts with largest value and works down
+            int number = SYMBOLS.indexOf(ch);
+            result += (int) (number * Math.pow(base, exponent));
+            exponent--;
+        }
+
+        return result; //works
 
     }
 
