@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 /**
  * This program is a base converter that reads a data file and outputs a converted file
+ * It also prints the output, and includes error messages in this print
  *
  * @author emiliano
  * @version 11/19/2020
@@ -23,7 +24,6 @@ public class BaseConverter {
 
     /**
      * Main method for class BaseConverter
-     *
      * @param args, command line arguments, if needed
      */
     public static void main(String[] args) {
@@ -34,9 +34,10 @@ public class BaseConverter {
 
     /**
      * Convert a base-10 int to a String number of base toBase.
-     * @param num
-     * @param toBase
-     * @return
+     *
+     * @param num     base 10 int to convert from
+     * @param toBase, the desired base to convert to
+     * @return outputNum, a string representing the param num converted toBase
      */
     public String intToStr(int num, int toBase) {
         String outputNum = "";
@@ -86,7 +87,7 @@ public class BaseConverter {
     /**
      * Convert a String num in fromBase to base-10 int.
      * @param num,      a String representing the original value
-     * @param fromBase, a String TODO
+     * @param fromBase, a String representing the original base of num
      * @return result, which is num converted to base 10
      */
     public int strToInt(String num, String fromBase) {
