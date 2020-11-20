@@ -35,7 +35,7 @@ public class BaseConverter {
     /**
      * Convert a base-10 int to a String number of base toBase.
      *
-     * @param num     base 10 int to convert from
+     * @param num,    base 10 int to convert from
      * @param toBase, the desired base to convert to
      * @return outputNum, a string representing the param num converted toBase
      */
@@ -86,7 +86,7 @@ public class BaseConverter {
 
     /**
      * Convert a String num in fromBase to base-10 int.
-     * @param num,      a String representing the original value
+     * @param num, a String representing the original value
      * @param fromBase, a String representing the original base of num
      * @return result, which is num converted to base 10
      */
