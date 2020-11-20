@@ -56,22 +56,21 @@ public class BaseConverter {
         Scanner in = null;
         PrintWriter pw = null;
         try {
-            in = new Scanner(new File("Classwork/datafiles/values10.dat"));
+            in = new Scanner(new File("Classwork/datafiles/values30.dat"));
             pw = new PrintWriter(new FileWriter("Classwork/datafiles/converted.dat"));
             String[] line;
             while (in.hasNext()) {
                 line = in.nextLine().split("\t");
                 if (Integer.parseInt(line[1]) < 2 || Integer.parseInt(line[1]) > 16) {
-                    System.out.print("");
+                    System.out.println("Invalid input base " + line[1]);
                 } else if (Integer.parseInt(line[2]) < 2 || Integer.parseInt(line[2]) > 16) {
-                    System.out.print("");
+                    System.out.println("Invalid output base " + line[2]);
                 } else {
                     System.out.println(line[0] + "\t" + line[1] + "\t" +
                             intToStr(strToInt(line[0], line[1]), Integer.parseInt(line[2])) + "\t" + line[2]);
                     pw.println(line[0] + "\t" + line[1] + "\t" +
                             intToStr(strToInt(line[0], line[1]), Integer.parseInt(line[2])) + "\t" + line[2]);
-                    // ["24A4B46", "13", "6"]
-                    //System.out.println(in.nextLine());
+
 
                 }
 
