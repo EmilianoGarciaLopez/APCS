@@ -15,7 +15,7 @@ public class scratch {
 
     //3
     public static String removeDashes(String str) {
-        str.replace("-", "");
+        str.replace("-", "");   //regex = "regular expression"
         return str;
     }
 
@@ -23,8 +23,33 @@ public class scratch {
     public static String convert(String dateStr) {
 
         String[] newStr = dateStr.split("/");
-
+        for (int i = 0; i < 2; i++) {
+            if (newStr[i].length() < 2) {
+                newStr[i] = "0" + newStr[i];
+            }
+        }
         return (newStr[1] + "-" + newStr[0] + "-" + newStr[2]);
     }
+
+    //6 - scroll method
+
+    public static String scroll(String phrase) {
+        if (phrase.length() > 0) {
+            return phrase.substring(1) + phrase.charAt(0);
+        } else {
+            return phrase;
+        }
+    }
+
+
+    //9 - use scroll method
+    public static boolean confirm(String phrase) {
+        if (phrase.length() > 1) {
+            return (phrase.substring(1) + phrase.charAt(0)).equals(phrase);
+        } else {
+            return true;
+        }
+    }
+
 
 }
