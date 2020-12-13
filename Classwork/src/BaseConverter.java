@@ -55,8 +55,8 @@ public class BaseConverter {
      * the result to the console window and writes data to the output stream.
      */
     public void inputConvertPrintWrite() {
-        Scanner in = null;
-        PrintWriter pw = null;
+        Scanner in;
+        PrintWriter pw;
         try {
             in = new Scanner(new File("Classwork/datafiles/values30.dat"));
             pw = new PrintWriter(new FileWriter("Classwork/datafiles/converted.dat"));
