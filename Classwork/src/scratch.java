@@ -15,7 +15,7 @@ public class scratch {
 
     //3
     public static String removeDashes(String str) {
-        str.replace("-", "");   //regex = "regular expression"
+        str = str.replace("-", "");   //regex = "regular expression"
         return str;
     }
 
