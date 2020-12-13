@@ -11,6 +11,7 @@ import java.util.Hashtable;
 public class RomanToDecimal { // this is a public class that handles everything in this project
     /**
      * converts a string to a valid decimal (base-10 value)
+     *
      * @param roman Must be an uppercase string
      * @return this program returns d which is the decimal value
      */

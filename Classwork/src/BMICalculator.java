@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 /**
  * This program calculates a user's BMI from their height and weight
+ *
  * @author emilianogarcia
  * @version 1
  */
@@ -31,6 +32,7 @@ public class BMICalculator {
      * Uses a Scanner to prompt the user for info, process the
      * feet/inches conversion, calls the computeBMI method and prints the
      * correct information.
+     *
      * @param args command line arguments, if needed
      */
     public static void main(String[] args) {
@@ -52,7 +54,7 @@ public class BMICalculator {
                     System.out.println("Your BMI, expressed as weight(kg)/height(m)^2: " + df.format(computeBMI(intHeight, intWeight)) + " kg/m^2");
                     in.nextLine();
 
-                } else if (textHeight.toUpperCase().equals("Q")) {
+                } else if (textHeight.equalsIgnoreCase("Q")) {
                     break;
                 } else {
                     System.out.println("invalid input, please try again");

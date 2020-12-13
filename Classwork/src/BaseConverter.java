@@ -24,6 +24,7 @@ public class BaseConverter {
 
     /**
      * Main method for class BaseConverter
+     *
      * @param args, command line arguments, if needed
      */
     public static void main(String[] args) {
@@ -86,7 +87,8 @@ public class BaseConverter {
 
     /**
      * Convert a String num in fromBase to base-10 int.
-     * @param num, a String representing the original value
+     *
+     * @param num,      a String representing the original value
      * @param fromBase, a String representing the original base of num
      * @return result, which is num converted to base 10
      */
