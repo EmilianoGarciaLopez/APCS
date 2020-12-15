@@ -41,6 +41,18 @@ public class scratch {
         }
     }
 
+    //7
+    public static String lname(String name) {
+        String[] nameArr = name.split(", ");
+        return nameArr[1] + " " + nameArr[0];
+    }
+
+
+    //8 - replace method
+    public static String binaryFlip(String phrase) {
+        return phrase.replace("0", "*").replace("1", "0").replace("*", "1");
+    }
+
 
     //9 - use scroll method
     public static boolean confirm(String phrase) {
@@ -49,6 +61,22 @@ public class scratch {
         } else {
             return true;
         }
+    }
+
+
+    //11
+    public static String cutOut(String str, String cut) {
+        return str.substring(0, str.indexOf(cut)) + str.substring(str.indexOf(cut) + cut.length());
+    }
+
+    //15
+
+    public static boolean isNum(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i)))
+                return false;
+        }
+        return true;
     }
 
 }
