@@ -42,7 +42,7 @@ public class Chapter9Arrays {
     }
 
     //6
-    // The mystery count method counts the number of items in the array before a 0 is found.
+    // The mystery count method counts the number of items in the array before a non-zero value is found.
 
 
     //11
@@ -61,11 +61,33 @@ public class Chapter9Arrays {
 
     //13
 
+    //  return i == j || i + j == N-1
+
     //14
+
+    public static double positiveMax(double[][] m) {
+        double MAX = 0;
+        for(double[] row: m) {
+            for(double element: row) {
+                if(element > MAX) {
+                    MAX = element;
+                }
+            }
+        }
+        return MAX;
+    }
 
     //18
 
     //21
+    /*
+
+    {"One", "Two", "Three"}
+    For-each loops with objects are strange, they don't modify the original
+    array contents. Use a counter-driven loop and address array subsets by
+    index to permanently change array
+
+     */
 
     //22
 
