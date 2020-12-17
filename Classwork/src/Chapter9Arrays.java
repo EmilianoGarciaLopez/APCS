@@ -36,6 +36,8 @@ public class Chapter9Arrays {
     //6
     // The mystery count method counts the number of items in the array before a 0 is found.
 
+
+    //11
     static int fib(int n) {         //https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
         int[] f = new int[n + 2];
         int i;
@@ -49,5 +51,17 @@ public class Chapter9Arrays {
         }
         return f[n];
     }
+
+    //13
+
+    //14
+
+    //18
+
+    //21
+
+    //22
+
+    //23
 
 }
