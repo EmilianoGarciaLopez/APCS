@@ -2,12 +2,20 @@ public class Chapter9Arrays {
     public static void main(String[] args) {
 
 
-        //1
+        //1a
         int[] intArr = {1, 2, 4};
 
-        //2
+        //1b
         int sum = intArr[0] + intArr[1];
+
     }
+
+    /* 2
+    false
+    true
+    true
+    false
+     */
 
     //3
     public static void SwapArray(int[] array) {
@@ -41,7 +49,6 @@ public class Chapter9Arrays {
     static int fib(int n) {         //https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
         int[] f = new int[n + 2];
         int i;
-
 
         f[0] = 0;
         f[1] = 1;
