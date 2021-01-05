@@ -32,7 +32,6 @@ public class scratch {
     }
 
     //6 - scroll method
-
     public static String scroll(String phrase) {
         if (phrase.length() > 0) {
             return phrase.substring(1) + phrase.charAt(0);
@@ -40,7 +39,6 @@ public class scratch {
             return phrase;
         }
     }
-
 
     //9 - use scroll method
     public static boolean confirm(String phrase) {
@@ -50,5 +48,7 @@ public class scratch {
             return true;
         }
     }
+
+
 
 }
