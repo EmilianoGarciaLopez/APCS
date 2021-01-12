@@ -29,7 +29,6 @@ public class ISBNValidator {
             int valid = 0, invalid = 0;
 
             while (in.hasNext()) {
-                //TODO: which array should each number be put into;
                 String isbn = in.nextLine();
                 if (isValidISBN(isbn)) {
                     validNums[valid++] = isbn;
