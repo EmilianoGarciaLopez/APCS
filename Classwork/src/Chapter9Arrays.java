@@ -67,9 +67,9 @@ public class Chapter9Arrays {
 
     public static double positiveMax(double[][] m) {
         double MAX = 0;
-        for(double[] row: m) {
-            for(double element: row) {
-                if(element > MAX) {
+        for (double[] row : m) {
+            for (double element : row) {
+                if (element > MAX) {
                     MAX = element;
                 }
             }
@@ -80,8 +80,8 @@ public class Chapter9Arrays {
     //18a
     public static int sumArray(int[] arr) {
         int sum = 0;
-        for(int i:arr) {
-            sum+=1;
+        for (int i : arr) {
+            sum += 1;
         }
         return sum;
     }
@@ -89,7 +89,7 @@ public class Chapter9Arrays {
     //18b
     public static int[] arraySums(int[][] t) {
         int[] sums = new int[t.length]; // how many rows in t
-        for (int r = 0; r<t.length; r++) {
+        for (int r = 0; r < t.length; r++) {
             sums[r] = sumArray(t[r]);
         }
         return sums;
@@ -107,17 +107,16 @@ public class Chapter9Arrays {
     //initialize i to 1
 
     //23
-    public static boolean isMedian(double[] sample,  double m) {
+    public static boolean isMedian(double[] sample, double m) {
         int count = 0;
-        for(double d: sample) {
-            if(d > m) {
+        for (double d : sample) {
+            if (d > m) {
                 count++;
-            }
-            else if(d<m){
+            } else if (d < m) {
                 count--;
             }
         }
-        return count ==0;
+        return count == 0;
     }
 
 }

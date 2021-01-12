@@ -24,15 +24,6 @@ public class Chapter11 {
 
     //5
 
-    public ArrayList<String> reverseList(ArrayList<String> words) {
-
-        ArrayList<String> newList = new ArrayList<>();
-        for (String s : words) {
-            newList.add(0, s);
-        }
-        return newList;
-    }
-
     //6
     public static void removeSmallest(ArrayList<Integer> list) {
         if (list.size() > 0) {
@@ -59,13 +50,6 @@ public class Chapter11 {
         }
     }
 
-    //8
-    /*
-        ArrayList<Object> listWithinList = new ArrayList<>();
-        listWithinList.add(listWithinList);
-     */
-    // This works, but is not recommended
-
     //10
     public static void removeConsecutiveDuplicates(ArrayList<String> lst) {
         //run loop backwards
@@ -75,6 +59,12 @@ public class Chapter11 {
         }
     }
 
+    //8
+    /*
+        ArrayList<Object> listWithinList = new ArrayList<>();
+        listWithinList.add(listWithinList);
+     */
+    // This works, but is not recommended
 
     public static void main(String[] args) {
         Random r = new Random();
@@ -84,5 +74,14 @@ public class Chapter11 {
         }
 
 
+    }
+
+    public ArrayList<String> reverseList(ArrayList<String> words) {
+
+        ArrayList<String> newList = new ArrayList<>();
+        for (String s : words) {
+            newList.add(0, s);
+        }
+        return newList;
     }
 }
