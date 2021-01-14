@@ -29,7 +29,7 @@ public class ISBNValidator {
     public void importData() {
         Scanner in = null;
         try {
-            in = new Scanner(new File("Classwork/isbn_files/isbn1.dat"));
+            in = new Scanner(new File("Classwork/isbn_files/isbn1.dat")); //your path is different
             //TODO: JFile chooser
 
             int valid = 0, invalid = 0;
