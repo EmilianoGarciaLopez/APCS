@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 /**
  * ISBNValidator validates data files of ISBN numbers using a few specific parameters
- * @version 01/15/2021
+ *
  * @author emili
+ * @version 01/15/2021
  */
 
 public class ISBNValidator {
@@ -22,12 +23,11 @@ public class ISBNValidator {
 
 
     /**
-     * imports .dat file, calls isValidISBN method and stores Strings into
-     * corresponding arrays
+     * imports .dat file, calls isValidISBN method and stores
+     * Strings into corresponding arrays
      */
     public void importData() {
         Scanner in = null;
-
         try {
             in = new Scanner(new File("Classwork/isbn_files/isbn1.dat"));
             //TODO: JFile chooser
@@ -79,32 +79,35 @@ public class ISBNValidator {
      * output the user-picked ISBN list or quit the application
      */
     public void runProgram() {
-        System.out.println("All ISBN data has been ... TODO");
-        System.out.println("View all valid .... TODO");
-        System.out.println(" View all invalid ... TODO");
-        System.out.println("Quit ... TODO");
         Scanner ui = new Scanner(System.in);
-        System.out.print("Your selection: ");
-        String user = ui.nextLine();
+        while (true) { //although you mentioned loop was not necessary during class, requirements said otherwise
+            System.out.println("All ISBN data has been imported and validated. Would you like to:");
+            System.out.println("\t1) View all valid ISBN numbers");
+            System.out.println("\t2) View all invalid ISBN numbers");
+            System.out.println("\t3) Quit");
+            System.out.print("Your selection: ");
+            String user = ui.nextLine();
 
-        if (user.equals("1")) {
-            for (String num : validNums) {
-                if(num != null) //absence of a memory address
-                    System.out.println(num);
+            if (user.equals("1")) {
+                for (String num : validNums) {
+                    if (num != null) //absence of a memory address
+                        System.out.println(num);
+                }
+            } else if (user.equals("2")) {
+                for (String num : invalidNums) {
+                    if (num != null) //absence of a memory address
+                        System.out.println(num);
+                }
+            } else if (user.equals("3")) {
+                ui.close();
+                break;
             }
         }
-
-        else if (user.equals("2")) {
-            for (String num : invalidNums) {
-                if(num != null) //absence of a memory address
-                    System.out.println(num);
-            }
-        }
-        ui.close();
     }
 
     /**
      * Main entry point for ISBN validator
+     *
      * @param args command line arguments, if needed
      */
     public static void main(String[] args) {
