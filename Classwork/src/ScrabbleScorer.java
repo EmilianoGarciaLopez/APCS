@@ -3,8 +3,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 import java.util.Scanner;
-//TODO javadoc
 
+/**
+ * This program asks for a word from the user and 
+ * outputs a corresponding score for that word
+ *
+ * @author Emiliano
+ * @version 1.22.2021
+ */
 public class ScrabbleScorer {
 
     private final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
