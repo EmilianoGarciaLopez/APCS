@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class ScrabbleScorer {
 
-    private final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private final int[] points = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
     ArrayList<String> dictionary;
 
@@ -33,7 +33,7 @@ public class ScrabbleScorer {
      * This method builds the dictionary as an arrayList from the provided txt file
      */
     public void buildDictionary() {
-        Scanner in = null;
+        Scanner in;
         try {
             in = new Scanner(new File("/Classwork/datafiles/SCRABBLE_WORDS.txt"));
             while (in.hasNext()) {
@@ -64,6 +64,9 @@ public class ScrabbleScorer {
      */
     public int getWordScore(String word) {
         int score = 0;
+        for(int i =0; i<word.length(); i++){
+            score +=points[letters.indexOf(word.charAt(i))];
+        }
         return score;
     }
 
