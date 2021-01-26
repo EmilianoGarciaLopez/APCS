@@ -1,11 +1,10 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * This program asks for a word from the user and 
+ * This program asks for a word from the user and
  * outputs a corresponding score for that word
  *
  * @author Emiliano
@@ -86,7 +85,7 @@ public class ScrabbleScorer {
             if (input.equals("0")) {
                 break;
             } else if (app.isValidWord(input)) {
-                System.out.println(temp  + " = " + app.getWordScore(input) + " points");
+                System.out.println(temp + " = " + app.getWordScore(input) + " points");
             } else {
                 System.out.println(temp + " is not a valid word in the dictionary");
             }
