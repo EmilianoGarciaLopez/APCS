@@ -1,6 +1,20 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
 
-public class SubWordFinder implements WordFinder{
+public class SubWordFinder implements WordFinder {
+    private final ArrayList<ArrayList<String>> dictionary;
+    public String alpha;
+
+    public SubWordFinder() {
+        alpha = "abcdefghijklmnopqrstuvwxyz";
+        dictionary = new ArrayList<>(26);
+
+        for (int i = 0; i < alpha.length(); i++) {
+            dictionary.add(new ArrayList<String>());
+        }
+    }
+
     /**
      * Populates the dictionary from the text file contents
      * The dictionary object should contain 26 buckets, each
@@ -10,6 +24,18 @@ public class SubWordFinder implements WordFinder{
      */
     @Override
     public void populateDictionary() {
+        Scanner in;
+        try {
+            in = new Scanner(new File("Classwork/subwords/words_all_os.txt"));
+            String word;
+            while (in.hasNext()) {
+                word = in.nextLine();
+                dictionary.get(alpha.indexOf(word.charAt(0))).add(word);
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
