@@ -1,6 +1,7 @@
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class SubWordFinder implements WordFinder {
     private final ArrayList<ArrayList<String>> dictionary;
@@ -9,7 +10,6 @@ public class SubWordFinder implements WordFinder {
     public SubWordFinder() {
         alpha = "abcdefghijklmnopqrstuvwxyz";
         dictionary = new ArrayList<>(26);
-
         for (int i = 0; i < alpha.length(); i++) {
             dictionary.add(new ArrayList<String>());
         }
@@ -32,8 +32,7 @@ public class SubWordFinder implements WordFinder {
                 word = in.nextLine();
                 dictionary.get(alpha.indexOf(word.charAt(0))).add(word);
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -70,6 +69,28 @@ public class SubWordFinder implements WordFinder {
      */
     @Override
     public boolean inDictionary(String word) {
-        return false;
+        ArrayList<String> bucket = dictionary.get(alpha.indexOf(word.charAt(0)));
+        return Collections.binarySearch(bucket, word) >= 0; //TODO implement custom method
+    }
+
+    private int indexOf(ArrayList<String> bucket, String word) {
+        int high = bucket.size() - 1, low = 0;
+
+        while (low <= high) { //TODO re-cur-sive
+            int mid = (low + high) / 2;
+            String item = bucket.get(mid);
+            if (word.compareTo(item) == 0)
+                return mid;
+            else if (word.compareTo(item) < 0) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
