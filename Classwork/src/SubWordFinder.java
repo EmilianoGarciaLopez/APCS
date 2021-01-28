@@ -53,7 +53,22 @@ public class SubWordFinder implements WordFinder {
      */
     @Override
     public ArrayList<SubWord> getSubWords() {
-        return null;
+        ArrayList<SubWord> subwords = new ArrayList<>();
+        return subwords;
+        //TODO HW
+        /*
+        for loop to go through each bucket
+            for loop to go through each word in the bucket
+                for loop that starts at index 2 of each word and stop at length()-2
+                    String front = word.substring(0, index)
+                    String back = word.sub(index)
+                    if indexOf(front) != -1 && indexOf(back) != -1
+                        subWord.new
+                        sub1
+                        sub2
+                        root
+
+         */
     }
 
     /**
