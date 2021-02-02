@@ -32,6 +32,10 @@ public class SubWordFinder implements WordFinder {
                 word = in.nextLine();
                 dictionary.get(alpha.indexOf(word.charAt(0))).add(word);
             }
+            in.close();
+            for (ArrayList<String> bucket : dictionary)
+                Collections.sort(bucket);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,8 +58,6 @@ public class SubWordFinder implements WordFinder {
     @Override
     public ArrayList<SubWord> getSubWords() {
         ArrayList<SubWord> subwords = new ArrayList<>();
-        return subwords;
-        //TODO HW
         /*
         for loop to go through each bucket
             for loop to go through each word in the bucket
@@ -67,8 +69,21 @@ public class SubWordFinder implements WordFinder {
                         sub1
                         sub2
                         root
-
          */
+        for (ArrayList<String> bucket : dictionary) {
+            for (String word : bucket) {
+                // a substring w 2 chars
+                // a substring w rest of chars
+                for (int i = 2; i < word.length() - 1; i++) {
+                    String front = word.substring(0, i);
+                    String back = word.substring(i);
+                    if (inDictionary(front) && inDictionary(back)) {
+                        subwords.add(new SubWord(word, front, back));
+                    }
+                }
+            }
+        }
+        return subwords;
     }
 
     /**
@@ -106,6 +121,13 @@ public class SubWordFinder implements WordFinder {
     }
 
     public static void main(String[] args) {
-
+        SubWordFinder app = new SubWordFinder();
+        app.populateDictionary();
+        System.out.println("TODO");
+        ArrayList<SubWord> temp = app.getSubWords();
+        for (SubWord sw : temp)
+            System.out.println(sw);
+        System.out.println(temp.size() + "TODO amount of lines");
+        System.out.println("Exiting TODO");
     }
 }
