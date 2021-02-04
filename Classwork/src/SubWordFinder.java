@@ -1,4 +1,7 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -58,18 +61,6 @@ public class SubWordFinder implements WordFinder {
     @Override
     public ArrayList<SubWord> getSubWords() {
         ArrayList<SubWord> subwords = new ArrayList<>();
-        /*
-        for loop to go through each bucket
-            for loop to go through each word in the bucket
-                for loop that starts at index 2 of each word and stop at length()-2
-                    String front = word.substring(0, index)
-                    String back = word.sub(index)
-                    if indexOf(front) != -1 && indexOf(back) != -1
-                        subWord.new
-                        sub1
-                        sub2
-                        root
-         */
         for (ArrayList<String> bucket : dictionary) {
             for (String word : bucket) {
                 // a substring w 2 chars
@@ -100,13 +91,13 @@ public class SubWordFinder implements WordFinder {
     @Override
     public boolean inDictionary(String word) {
         ArrayList<String> bucket = dictionary.get(alpha.indexOf(word.charAt(0)));
-        return Collections.binarySearch(bucket, word) >= 0; //TODO implement custom method
+        return Collections.binarySearch(bucket, word) >= 0;
     }
 
     private int indexOf(ArrayList<String> bucket, String word) {
         int high = bucket.size() - 1, low = 0;
 
-        while (low <= high) { //TODO re-cur-sive
+        while (low <= high) {
             int mid = (low + high) / 2;
             String item = bucket.get(mid);
             if (word.compareTo(item) == 0)
@@ -120,14 +111,27 @@ public class SubWordFinder implements WordFinder {
         return -1;
     }
 
+    /**
+     * Main method for this program
+     * Finds filepath and prints output to console and file accordingly
+     * @param args command line arguments, if needed
+     */
     public static void main(String[] args) {
-        SubWordFinder app = new SubWordFinder();
-        app.populateDictionary();
-        System.out.println("TODO");
-        ArrayList<SubWord> temp = app.getSubWords();
-        for (SubWord sw : temp)
-            System.out.println(sw);
-        System.out.println(temp.size() + "TODO amount of lines");
-        System.out.println("Exiting TODO");
+        PrintWriter pw;
+        try {
+            pw = new PrintWriter(new FileWriter("Classwork/subwords/output.txt"));
+            SubWordFinder app = new SubWordFinder();
+            app.populateDictionary();
+            ArrayList<SubWord> temp = app.getSubWords();
+            for (SubWord sw : temp) {
+                System.out.println(sw);
+                pw.println(sw); //also outputs to text file for checking
+            }
+            System.out.println(temp.size() + " amount of lines");
+            System.out.println("Exiting program...");
+            pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
