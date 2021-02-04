@@ -5,7 +5,7 @@
  * sub words are "base" + "ball"
  *
  * @author emiliano
- * @version 02/2/2021
+ * @version 02/4/2021
  */
 
 public class SubWord implements Comparable<SubWord> {

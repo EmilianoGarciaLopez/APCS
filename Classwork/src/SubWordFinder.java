@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * This program finds the subwords within one larger word
+ * @author emiliano
+ * @version 2/4/2021
+ */
 public class SubWordFinder implements WordFinder {
     private final ArrayList<ArrayList<String>> dictionary;
     public String alpha;
